@@ -1,5 +1,20 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.image.BufferedImage;
+import java.net.URI;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Logger;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 public class Syringe {
     private JFrame frame;
@@ -9,36 +24,60 @@ public class Syringe {
     private JButton superButton;
 
     public Syringe() {
-        // Create the frame
-        frame = new JFrame("Mark's Antivirus Virus Syringe");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400); // Set frame size
+        try {
+            Map<String, String> map = Map.of(
+                "title",  "Mark's Antivirus Virus Syringe",
+                "buttonMessage", "Virus Installed",
+                "imgURL", "https://media.istockphoto.com/id/185675612/photo/gray-and-white-tabby-kitten-playing-while-standing-up.jpg?s=612x612&w=0&k=20&c=yAK0keL_ERAedFKjF1nvHH8j0VsCXtSu12EJRU-5X3s="
+            );
 
-        // Create content pane
-        contentPane = new JPanel();
-        contentPane.setLayout(new BorderLayout());
-        frame.setContentPane(contentPane);
+            // Create the frame
+            frame = new JFrame(map.get("title"));
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(600, 400); // Set frame size
 
-        // Create and add components
-        titleLabel = new JLabel("Mark's Antivirus Virus Syringe");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        titleLabel.setHorizontalAlignment(JLabel.CENTER);
-        contentPane.add(titleLabel, BorderLayout.NORTH);
+            // Create content pane
+            contentPane = new JPanel();
+            contentPane.setLayout(new BorderLayout());
+            frame.setContentPane(contentPane);
 
-        instructionLabel = new JLabel("Injecting vir.... installing malwa.... fixing things please click the button below.");
-        instructionLabel.setHorizontalAlignment(JLabel.CENTER);
-        contentPane.add(instructionLabel, BorderLayout.CENTER);
+            // Create and add components
+            titleLabel = new JLabel("Mark's Antivirus Virus Syringe");
+            titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+            titleLabel.setHorizontalAlignment(JLabel.CENTER);
+            contentPane.add(titleLabel, BorderLayout.NORTH);
 
-        superButton = new JButton("Click Here for Super Fun Time!");
-        superButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(frame, "Virus has been installed successfuly!");
-        });
-        contentPane.add(superButton, BorderLayout.SOUTH);
+            instructionLabel = new JLabel("Injecting vir.... installing malwa.... fixing things please click the button below.");
+            instructionLabel.setHorizontalAlignment(JLabel.CENTER);
+            contentPane.add(instructionLabel, BorderLayout.CENTER);
 
-        // Pack and display the frame
-        frame.pack();
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setVisible(true);
+            URL imgSrc = new URI(map.get("imgURL")).toURL();
+            BufferedImage myPicture = ImageIO.read(imgSrc);
+
+            JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+            contentPane.add(picLabel);
+
+            superButton = new JButton("Let me get that credit card information bby");
+            superButton.addActionListener(e -> {
+                while (true) {
+                    String creditCard = JOptionPane.showInputDialog(frame, "enter credit card here");
+                    int option = JOptionPane.showConfirmDialog(frame, "Are you sure your credit card number is " + creditCard);
+                    if (option == 0) {
+                        JOptionPane.showMessageDialog(frame, "Thank you, computer now fix");
+                        break;
+                    }
+                    JOptionPane.showMessageDialog(frame, "well then fuck you, I also accept apple giftcard + bitcoin");
+                }
+            });
+            contentPane.add(superButton, BorderLayout.SOUTH);
+
+            // Pack and display the frame
+            frame.pack();
+            frame.setLocationRelativeTo(null); // Center the frame
+            frame.setVisible(true);
+        } catch (Exception e) {
+            System.out.println("ohh shit something went wrong");
+        }
     }
 
     public static void main(String[] args) {

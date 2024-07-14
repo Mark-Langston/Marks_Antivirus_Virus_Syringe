@@ -1,6 +1,2 @@
 Manifest-Version: 1.0
 Main-Class: Main
-Class-Path: C:\Users\mark_\OneDrive\Desktop\CSC272\Module 2\Marks_Antivi
- rus_Virus_Syringe\Marks_Antivirus_Virus_Syringe\out\production\Marks_An
- tivirus_Virus_Syringe
-
