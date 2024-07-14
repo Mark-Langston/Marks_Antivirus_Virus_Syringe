@@ -66,7 +66,7 @@ public class Syringe {
                         JOptionPane.showMessageDialog(frame, "Thank you, computer now fix");
                         break;
                     }
-                    JOptionPane.showMessageDialog(frame, "well then fuck you, I also accept apple giftcard + bitcoin");
+                    JOptionPane.showMessageDialog(frame, "I also accept apple giftcards & bitcoin");
                 }
             });
             contentPane.add(superButton, BorderLayout.SOUTH);
@@ -76,7 +76,7 @@ public class Syringe {
             frame.setLocationRelativeTo(null); // Center the frame
             frame.setVisible(true);
         } catch (Exception e) {
-            System.out.println("ohh shit something went wrong");
+            System.out.println("Uh-oh, something went wrong");
         }
     }
 
