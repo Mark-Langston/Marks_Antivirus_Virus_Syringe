@@ -3,10 +3,7 @@ import java.awt.Font;
 import java.awt.image.BufferedImage;
 import java.net.URI;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -47,15 +44,17 @@ public class Syringe {
             titleLabel.setHorizontalAlignment(JLabel.CENTER);
             contentPane.add(titleLabel, BorderLayout.NORTH);
 
+            JPanel centerPanel = new JPanel(new BorderLayout());
             instructionLabel = new JLabel("Injecting vir.... installing malwa.... fixing things please click the button below.");
             instructionLabel.setHorizontalAlignment(JLabel.CENTER);
-            contentPane.add(instructionLabel, BorderLayout.CENTER);
+            centerPanel.add(instructionLabel, BorderLayout.NORTH);
 
             URL imgSrc = new URI(map.get("imgURL")).toURL();
             BufferedImage myPicture = ImageIO.read(imgSrc);
-
             JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-            contentPane.add(picLabel);
+            centerPanel.add(picLabel, BorderLayout.CENTER);
+
+            contentPane.add(centerPanel, BorderLayout.CENTER);
 
             superButton = new JButton("Let me get that credit card information bby");
             superButton.addActionListener(e -> {
