@@ -1,5 +1,7 @@
 # Mark's Antivirus Virus Syringe
 
+![Sample Image](https://github.com/Mark-Langston/Marks_Antivirus_Virus_Syringe/blob/master/img/Sample.png "Sample Image")
+
 ## Overview
 
 Mark's Antivirus Virus Syringe is a playful Java Swing application designed to demonstrate basic GUI components, event handling, and image loading in Java. This program humorously mimics an antivirus tool with a playful twist.
