@@ -22,7 +22,7 @@ Mark's Antivirus Virus Syringe is a playful Java Swing application designed to d
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/marks-antivirus-virus-syringe.git
+    git clone https://github.com/Mark-Langston/Marks_Antivirus_Virus_Syringe.git
     ```
 2. **Navigate to the project directory**:
     ```sh
